@@ -53,6 +53,10 @@ PRODUCT_COPY_FILES += \
 $(foreach f,$(wildcard vendor/syberia/prebuilt/common/etc/init/*.rc),\
     $(eval PRODUCT_COPY_FILES += $(f):system/etc/init/$(notdir $f)))
 
+# system mount
+PRODUCT_COPY_FILES += \
+    vendor/syberia/prebuilt/common/bin/system-mount.sh:install/bin/system-mount.sh
+
 # Init files
 ifeq ($(AB_OTA_UPDATER),true)
 PRODUCT_COPY_FILES += \
